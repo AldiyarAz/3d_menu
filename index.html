@@ -10,28 +10,29 @@
 </head>
 
 <body>
-    <div class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="swipe-indicator"></div> <!-- Линия для свайпа -->
-                <span class="close-button" style="font-size: 2em;">&times;</span> <!-- Увеличиваем размер крестика -->
+    <div class="container">
+        <div class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="swipe-indicator"></div> <!-- Линия для свайпа -->
+                    <span class="close-button" style="font-size: 2em;">&times;</span> <!-- Увеличиваем размер крестика -->
+                </div>
+                <h2>Заголовок модального окна</h2>
+                <p>Содержимое модального окна.</p>
             </div>
-            <h2>Заголовок модального окна</h2>
-            <p>Содержимое модального окна.</p>
         </div>
-    </div>
-
-    <div class="side-menu" id="sideMenu">
-        <button class="close-button" onclick="toggleSideMenu()">&times;</button>
-        <h2>Меню</h2>
-        <p>Содержимое бокового меню</p>
-    </div>
-
+        
+        <div class="side-menu" id="sideMenu">
+            <button class="close-button" onclick="toggleSideMenu()">&times;</button>
+            <h2>Меню</h2>
+            <p>Содержимое бокового меню</p>
+        </div>
 
         <div class="header">
             <img src="img/Untitled_logo_1_free-file.jpg" alt="Логотип">
             <h1>3D MENU</h1>
             <button class="menu-button" onclick="toggleSideMenu()">&#9776;</button>
+        </div>
         </div>
 
         <div class="search-box">
@@ -39,7 +40,6 @@
             <button onclick="search()">Поиск</button>
         </div>
 
-        
         <div class="nav-wrapper" id="nav">
             <ul class="nav-tabs">
                 <li class="active">Комбо</li>
