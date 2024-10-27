@@ -1,105 +1,30 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #FFFAF0;
-    /* Белый фон */
-    color: #2A2D34;
-    /* Темно-серый текст для хорошей читаемости */
+    background-color: white;
+    /* Темно-синий фон */
+    color: black;
+    /* Светлый текст */
     margin: 0;
     padding: 0;
-    width: 100%;
-        /* Полная ширина */
-        height: 100%;
-        /* Полная высота */
-        overflow-x: hidden;
-        /* Убираем горизонтальную прокрутку, если она есть */
 }
 
 .container {
+    max-width: 900px;
     margin: auto;
+    padding: 20px;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
     background: white;
-    /* Белый фон */
-    color: #2A2D34;
+    /* Темно-синий фон */
+    border-radius: 30px;
 }
 
 .header img {
     width: 50px;
-}
-
-/* Стиль для всей области поиска */
-.search-box {
-    display: flex;
-    width: 100%;
-    gap: 10px;
-    padding: 15px;
-    position: relative;
-    margin-bottom: 20px;
-}
-
-.search-box input[type="text"] {
-    width: 65%;
-    padding: 10px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
-    /* Светло-серый бордер */
-    outline: none;
-    background-color: #f7f7f7;
-    /* Очень светлый серый для поля поиска */
-    color: #333333;
-    /* Темно-серый текст */
-    font-size: 16px;
-}
-
-.search-box button {
-    padding: 10px 20px;
-    border-radius: 20px;
-    background-color: #007bff;
-    /* Синий цвет для кнопки */
-    color: white;
-    /* Белый текст на кнопке */
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.search-box button:hover {
-    background-color: #0056b3;
-    /* Темнее синий при наведении */
-}
-
-/* Стили для содержимого */
-#content {
-    margin: 20px;
-    border-radius: 30px;
-    padding: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    /* Светлая тень */
-}
-
-/* Подсветка */
-.highlight {
-    background-color: #f39c12;
-    /* Ярко-оранжевый для подсветки */
-    color: white;
-    /* Белый текст в подсветке */
-    font-weight: bold;
-    border-radius: 5px;
-    padding: 2px 4px;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 24px;
-    margin: 20px 0;
-    color: #2A2D34;
-    font-weight: bold;
 }
 
 .nav-wrapper {
@@ -111,14 +36,13 @@ body {
     /* Ширина на всю страницу */
     z-index: 999;
     /* Чтобы находилось под заголовком */
-    background-color: #FFFAF0;
+    background-color: white;
     /* Цвет фона для навигации */
     transition: top 0.3s;
     /* Плавный переход при прокрутке */
     overflow-x: auto;
     /* Горизонтальный скролл */
-    white-space: nowrap;
-    /* Непереносимый текст */
+       white-space: nowrap;
 }
 
 .fixed {
@@ -127,54 +51,52 @@ body {
     top: 0;
     /* Вверху страницы */
 }
-
 .nav-tabs {
-    display: flex;
-    /* Используем flexbox для навигации */
-    justify-content: center;
-    /* Центрируем элементы */
-    padding: 10px 0;
-    /* Отступы сверху и снизу */
+    display: inline-block;
+    padding: 0;
     margin: 0;
-    /* Убираем отступы */
     list-style-type: none;
-    /* Убираем маркеры списка */
+    background-color: white;
+    /* Темно-синий фон */
+    border-radius: 30px;
 }
 
 .nav-tabs li {
+    display: inline-block;
     padding: 12px 20px;
     cursor: pointer;
-    color: #333333;
-    /* Темно-серый текст */
-    margin: 0 10px;
-    /* Отступы между элементами */
+    color: #ecf0f1;
+    /* Светлый текст */
+    margin: 5px;
     border-radius: 30px;
     transition: background 0.3s;
 }
 
 .nav-tabs li.active {
-    background-color: #007bff;
+    background-color: #2980b9;
     /* Яркий синий для выделения */
-    color: white;
-    /* Белый текст для активной вкладки */
 }
 
 .nav-tabs li:hover {
-    background-color: #0056b3;
-    /* Темнее синий при наведении */
+    background-color: #1abc9c;
+    /* Яркий зеленый при наведении */
 }
 
-/* Секции с комбинированными элементами */
 .combo-section {
     margin-bottom: 20px;
+    background-color: #34495e;
+    /* Темно-синий фон секций */
     border-radius: 30px;
     padding: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    /* Белый фон для секций */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Карточки */
+h2 {
+    margin: 0 0 15px;
+    color: #f39c12;
+    /* Ярко-оранжевый заголовок */
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -182,22 +104,18 @@ body {
 }
 
 .card {
+    background: #34495e;
+    /* Темно-синий фон для карточек */
     border-radius: 30px;
     padding: 15px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    /* Светлая тень для карточек */
-    color: #333333;
-    /* Темно-серый текст для карточек */
-    background-color: white;
-    /* Белый фон для карточек */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    /* Увеличенная тень при наведении */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
 }
 
 @keyframes gb-popup-slide-zoom-bottom {
@@ -216,6 +134,53 @@ body {
         transform: scale(1) translateY(0);
         /* Конечное положение */
     }
+}
+
+.modal {
+    display: none;
+    /* Скрываем модальное окно по умолчанию */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70%;
+    /* Высота модального окна */
+    background-color: white;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    /* Плавный переход */
+    transform: translateY(100%);
+    /* Скрываем модальное окно за нижней границей */
+    z-index: 1000;
+    /* Убедитесь, что модальное окно выше других элементов */
+    border-radius: 30px;
+}
+
+.modal.show {
+    display: block;
+    /* Показываем модальное окно */
+    animation: gb-popup-slide-zoom-bottom 1s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    /* Применяем анимацию */
+    transform: translateY(0);
+    /* Перемещаем модальное окно на место */
+}
+
+.modal-content {
+    padding: 20px;
+    height: 100%;
+    overflow: auto;
+    /* Прокрутка содержимого при необходимости */
+}
+
+.modal-header {
+    position: relative;
+    padding: 10px;
+}
+
+.price {
+    font-weight: bold;
+    color: #f39c12;
+    /* Ярко-оранжевый для цены */
 }
 
 .modal {
@@ -299,6 +264,57 @@ body {
     cursor: pointer;
 }
 
+.section-title {
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0;
+    color: #f39c12;
+    /* Ярко-оранжевый для заголовка */
+    font-weight: bold;
+}
+
+.search-box {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    position: relative;
+    margin-bottom: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-box input[type="text"] {
+    width: 65%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    /* Светло-серый бордер */
+    outline: none;
+    background-color: #f7f7f7;
+    /* Очень светлый серый для поля поиска */
+    color: #333333;
+    /* Темно-серый текст */
+    font-size: 16px;
+}
+
+.search-box button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #007bff;
+    /* Синий цвет для кнопки */
+    color: white;
+    /* Белый текст на кнопке */
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-box button:hover {
+    background-color: #0056b3;
+    /* Темнее синий при наведении */
+}
+
 .menu-button {
     font-size: 24px;
     background: none;
@@ -312,7 +328,7 @@ body {
     top: 0;
     right: 0;
     width: 50%;
-    height: 100%
+    height: 100%;
     background-color: white;
     transform: translateX(100%);
     box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.3);
@@ -324,7 +340,6 @@ body {
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-/* Плавное появление меню справа */
 .show-side-menu {
     animation: gb-popup-slide-zoom-right 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
 }
@@ -351,4 +366,3 @@ body {
         transform: scale(1) translateX(0);
     }
 }
-
