@@ -28,38 +28,15 @@ highlightActiveTab();
 
 // Получаем элементы модального окна
 var modal = document.querySelector('.modal');
-var span = document.getElementsByClassName("close-button")[0];
+var closeButtons = document.querySelectorAll(".close-button"); // Изменено на querySelectorAll для получения всех кнопок
 
-// Переменные для отслеживания касаний
-let startY = 0;
-let endY = 0;
-
-// Добавляем обработчики событий для линии свайпа
-const swipeIndicator = document.querySelector('.swipe-indicator');
-
-swipeIndicator.addEventListener('touchstart', function(event) {
-    startY = event.touches[0].clientY; // Получаем начальную позицию касания
-});
-
-swipeIndicator.addEventListener('touchend', function(event) {
-    endY = event.changedTouches[0].clientY; // Получаем конечную позицию касания
-    handleSwipe();
-});
-
-function handleSwipe() {
-    const swipeDistance = endY - startY; // Расстояние свайпа
-
-    // Проверяем, был ли свайп вниз
-    if (swipeDistance > 50) { // Измените значение 50, если нужно
-        closeModal(); // Закрываем модальное окно
-    }
-}
-
+// Функция для открытия модального окна
 function openModal(info) {
     document.querySelector('.modal-content h2').innerText = info; // Добавляем информацию
     modal.classList.add('show'); // Показываем модальное окно
 }
 
+// Функция для закрытия модального окна
 function closeModal() {
     modal.classList.remove('show'); // Скрываем модальное окно
 }
@@ -71,6 +48,11 @@ window.onclick = function(event) {
     }
 }
 
+// Обработчик для всех кнопок закрытия модального окна
+closeButtons.forEach(function(button) {
+    button.addEventListener('click', closeModal);
+});
+
 // Добавляем обработчик события для каждой карточки
 var cards = document.querySelectorAll('.card');
 cards.forEach(function(card) {
@@ -79,8 +61,6 @@ cards.forEach(function(card) {
         openModal(info); // Открываем модальное окно
     });
 });
-
-// Остальной код...
 
 
 function scrollToElement(elementSelector, instance = 0) {
@@ -93,7 +73,6 @@ function scrollToElement(elementSelector, instance = 0) {
     }
 }
 
-// Навигационные ссылки
 const link1 = document.getElementById("link1");
 const link2 = document.getElementById("link2");
 const link3 = document.getElementById("link3");
@@ -109,20 +88,6 @@ link2.addEventListener('click', () => {
 link3.addEventListener('click', () => {
     scrollToElement('#sushi-section');
 });
-
-function search() {
-    // Сбросить предыдущее выделение
-    const contentDiv = document.getElementById('content');
-    const originalContent = contentDiv.innerHTML.replace(/<span class="highlight">(.*?)<\/span>/g, '$1');
-    contentDiv.innerHTML = originalContent;
-
-    const input = document.getElementById('searchBox').value.trim().toLowerCase();
-    if (input === '') return;
-
-    const regex = new RegExp(`(${input})`, 'gi');
-    const highlighted = contentDiv.innerHTML.replace(regex, '<span class="highlight">$1</span>');
-    contentDiv.innerHTML = highlighted;
-}
 
 // Получаем навигационное меню
 const nav = document.getElementById("nav");
